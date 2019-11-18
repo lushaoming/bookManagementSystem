@@ -1,0 +1,1 @@
+function verifyUserLoginStatus(){$.ajaxSetup({headers:{"X-CSRF-TOKEN":$('meta[name="csrf-token"]').attr("content")}});$.ajax({url:"/ajax",type:"POST",dataType:"json",data:{action:"heartbeat",interval:60,},success:function(res){if(res.auth_check===false){location.href="/login"}}})};
